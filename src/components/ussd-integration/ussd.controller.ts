@@ -1,4 +1,4 @@
-import { Controller, Post, Req } from "@nestjs/common";
+import { Controller, Get, Post, Req } from "@nestjs/common";
 import { UssdService } from "./ussd.service";
 import { Request } from "express";
 
@@ -6,8 +6,12 @@ import { Request } from "express";
 export class UssdController {
     constructor(private ussdService: UssdService) {}
 
-    @Post()
+    @Post('post')
     getReqBody(@Req() req: Request) {
+        console.log(req)
+    }
+    @Get('resp')
+    respond(@Req() req: Request) {
         console.log(req)
     }
 }
