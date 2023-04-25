@@ -1,4 +1,4 @@
-import { Body, Controller, Post, Req } from "@nestjs/common";
+import { Controller, Post, Req } from "@nestjs/common";
 import { UssdService } from "./ussd.service";
 import { Request } from "express";
 
