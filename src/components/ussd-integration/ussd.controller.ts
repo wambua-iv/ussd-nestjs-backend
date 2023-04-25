@@ -10,7 +10,13 @@ export class UssdController {
     @Post('post')
     getReqBody(@Body() dto: UssdBody) {
         console.log(dto)
-        return 'CON Hello Africa is HOME'
+        if(dto.text == '1'){
+                return this.ussdService.recordIncident()
+            }
+        else{
+            return 'Welcome to Africa is Home \n 1. Would you Like to report an Incident'
+        }
+        
     }
     @Get('resp')
     respond(@Req() req: Request) {
