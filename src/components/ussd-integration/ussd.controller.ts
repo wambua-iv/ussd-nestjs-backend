@@ -9,6 +9,7 @@ export class UssdController {
     @Post('post')
     getReqBody(@Req() req: Request) {
         console.log(req)
+        return 'CON Hello Africa is HOME'
     }
     @Get('resp')
     respond(@Req() req: Request) {
