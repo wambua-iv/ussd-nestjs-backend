@@ -14,7 +14,7 @@ export class UssdController {
                 return this.ussdService.recordIncident()
             }
         else{
-            return 'Welcome to Africa is Home \n 1. Would you Like to report an Incident'
+            return ' CON Welcome to Africa is Home \n 1. Would you Like to report an Incident'
         }
         
     }
