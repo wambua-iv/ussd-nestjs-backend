@@ -17,7 +17,7 @@ class UssdController {
     } 
     else if (dto.text.includes('1*')){
 
-        return 'CON Jambo' + dto.text.slice(2) + 'Ungependa tufanyeje \n 3. Tukupigie simu ipi? \4. Turipoti kwa askari?'
+        return 'CON Jambo' + dto.text.slice(2) + 'Gani Limetendeka \n 3. Sexual Assault/ Ubakaji \4. FGM/ Ukeketaji wa sehemu zangu za sir'
     }
     else if (dto.text == '2') {
       return this.ussdService.recordRapeCase(dto);
