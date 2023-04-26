@@ -25,5 +25,6 @@ export class UssdService {
     this.ussdHandler.state('FGM', {
         run: () => {}
     })
+    return this.ussdHandler.run(dto,ussdResponse => ussdResponse )
   }
 }

@@ -20,4 +20,7 @@ export class UssdBody {
     @IsString()
     networkCode: string;
 
+    @IsNotEmpty()
+    @IsString()
+    serviceCode: string;
 }
