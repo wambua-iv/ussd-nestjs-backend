@@ -12,7 +12,7 @@ export class UssdService {
    }
 
    async recordRapeCase(dto: UssdBody) {
-   const victim = await this.database.Victim.create({
+   const victim = await this.database.victim.create({
         data : {
             sessionId: dto.sessionId,
             phoneNumber: dto.phoneNumber,
