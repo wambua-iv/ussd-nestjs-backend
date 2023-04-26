@@ -11,10 +11,10 @@ class UssdController {
   getReqBody(@Body() dto: UssdBody) {
     console.log(dto);
     if (dto.text == '') {
-        return ' CON Welcome to Africa is Home \n 1. Would you Like to report an Incident';
-    } else if (dto.text == 'FGM') {
+        return ' CON Would you Like to report an Incident \n 1.FGM \n 2.Rape';
+    } else if (dto.text == 'FGM' || '1' || 'fgm' || 'Fgm') {
       return 'CON FGM landing'
-    } else if (dto.text == 'Rape') {
+    } else if (dto.text == 'Rape' || '2' || 'rape') {
       return 'CON Rape landing'
     } else {
       return ' END Invalid input';
