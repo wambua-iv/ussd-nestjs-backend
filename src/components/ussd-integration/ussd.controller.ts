@@ -10,7 +10,7 @@ class UssdController {
   @Post('post')
   getReqBody(@Body() dto: UssdBody) {
     console.log(dto);
-    if (dto.text == '1') {
+    if (dto.text == '') {
         return ' CON Welcome to Africa is Home \n 1. Would you Like to report an Incident';
     } else if (dto.text == 'FGM') {
       return 'CON FGM landing'
