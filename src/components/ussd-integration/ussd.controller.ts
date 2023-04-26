@@ -13,12 +13,12 @@ class UssdController {
     if (dto.text == '') {
         return 'CON Who are reporting for?/ Unaripoti kwa niaba ya nani? \n 1. Self/ Wewe mwenyewe \n 2. Someone else/ Mtu mwengine'
     } else if (dto.text == '1') {
-        return ' CON Sasa, unaitwa nani?/ Hi, what\'s your name \n format: Name: Your Name \n jibu Jina: Jina Lako';
+        return ' CON Sasa, unaitwa nani?/ Hi, what\'s your name \n Name: Your Name \n Jina: Jina Lako';
     } 
     else if (dto.text.includes('1*')){
         return 'CON we are getting there'
     }
-    else if (dto.text.slice(2).includes('Name')){
+    else if (dto.text.slice(2).includes('Name'|| 'Jibu')){
         return 'CON we are getting there'
     }
     else if (dto.text == '2') {
