@@ -15,15 +15,18 @@ class UssdController {
     } else if (dto.text == '1') {
         return ' CON Sasa, unaitwa nani?/ Hi, what\'s your name \n Name: Your Name \n Jina: Jina Lako';
     } 
+    else if (dto.text.includes('+254')) {
+        return `END  Tunakujali na tunataka kukusaidia uwe salama! `
+    }
     else if (dto.text.includes('*3*')) {
-        return `END Pole! Utapokea Simu yetu sasa hivi `
+        return `CON  Tupige Simu wapi \n Anzia na +254 `
       }
     else if (dto.text.includes('*3')) {
-        return `CON ${dto.text.slice(2, -2)} Tupige Simu wapi `
+       return `CON ${dto.text.slice(2, -2)} Ningependa kujua mahali ulipo(jina LA shule,jina LA kanisa/jina LA hospitali)/what is your location?(name of town/name of school/name of nearest hospital`
       }
     else if (dto.text.includes('1*')){
 
-        return `CON Jambo ${dto.text.slice(2)} Gani Limetendeka 
+        return `CON Jambo ${dto.text.slice(2)}  Jambo Gani Limetendeka 
              3. Sexual Assault/ Ubakaji 
              4. FGM/ Ukeketaji wa sehemu zangu za sir`
     }
@@ -39,3 +42,4 @@ class UssdController {
   }
 }
 export default UssdController;
+
