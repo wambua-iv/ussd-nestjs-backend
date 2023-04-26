@@ -4,6 +4,7 @@ import { UssdService } from './ussd.service';
 import { DatabaseModule } from '../database/Database.module';
 
 @Module({
+  imports: [DatabaseModule],
   controllers: [UssdController],
   providers: [UssdService],
 })
