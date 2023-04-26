@@ -11,11 +11,13 @@ class UssdController {
   getReqBody(@Body() dto: UssdBody) {
     console.log(dto);
     if (dto.text == '1') {
+        return ' CON Welcome to Africa is Home \n 1. Would you Like to report an Incident';
+    } else if (dto.text == 'FGM') {
       return true; //this.ussdService.recordIncident(dto);
-    } else if (dto.text == '1*1') {
+    } else if (dto.text == 'Rape') {
       return true; //this.ussdService.recordIncident(dto);
     } else {
-      return ' CON Welcome to Africa is Home \n 1. Would you Like to report an Incident';
+      return ' END Invalid input';
     }
   }
   @Get('resp')
