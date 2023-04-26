@@ -12,7 +12,7 @@ class UssdController {
     console.log(dto);
     if (dto.text == '') {
       return ' CON Sasa, unaitwa nani?/ Hi, what\'s your name';
-    } else if (dto.text == '2*'+ '[a-zA-Z]+') {
+    } else if (dto.text == '[a-zA-Z]+') {
       return 'CON FGM landing';
     } else if (dto.text == '2') {
       return this.ussdService.recordRapeCase(dto);
