@@ -10,8 +10,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
- model User {
+ model Victim {
   id    Int     @id @default(autoincrement())
-  email String  @unique
+  phoneNumber String
   name  String?
+  reportToPolice String
+  sessionId String
 }
