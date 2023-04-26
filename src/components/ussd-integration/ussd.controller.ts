@@ -11,9 +11,9 @@ class UssdController {
   getReqBody(@Body() dto: UssdBody) {
     console.log(dto);
     if (dto.text == '') {
-      return ' CON Sasa, unaitwa nani?/ Hi, what\'s your name';
-    } else if (dto.text == '[a-zA-Z]+') {
-      return 'CON FGM landing';
+        return 'CON Who are reporting for?/ Unaripoti kwa niaba ya nani? \n 1. Self/ Wewe mwenyewe \n 2. Someone else/ Mtu mwengine'
+    } else if (dto.text == '1*' + '[a-zA-Z]+') {
+        return ' CON Sasa, unaitwa nani?/ Hi, what\'s your name';
     } else if (dto.text == '2') {
       return this.ussdService.recordRapeCase(dto);
     } else if (dto.text == '2*'+ '[a-zA-Z]+') {
