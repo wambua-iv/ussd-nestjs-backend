@@ -15,8 +15,9 @@ class UssdController {
     } else if (dto.text == '1') {
         return ' CON Sasa, unaitwa nani?/ Hi, what\'s your name \n Name: Your Name \n Jina: Jina Lako';
     } 
-    else if (dto.text.slice(2).includes('Name'|| 'Jibu')){
-        return 'CON Jambo Gani Limetendeka'
+    else if (dto.text.includes('1*')){
+
+        return 'CON Jambo' + dto.text.slice(2) + 'Ungependa tufanyeje \n 3. Tukupigie simu ipi? \4. Turipoti kwa askari?'
     }
     else if (dto.text == '2') {
       return this.ussdService.recordRapeCase(dto);
