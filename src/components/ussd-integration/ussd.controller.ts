@@ -11,12 +11,12 @@ class UssdController {
   getReqBody(@Body() dto: UssdBody) {
     console.log(dto);
     if (dto.text == '') {
-      return ' CON Would you Like to report an Incident \n 1.FGM \n 2.Rape';
-    } else if (dto.text == '1') {
+      return ' CON Sasa, unaitwa nani?/ Hi, what\'s your name';
+    } else if (dto.text == '2*'+ '[a-zA-Z]+') {
       return 'CON FGM landing';
     } else if (dto.text == '2') {
       return this.ussdService.recordRapeCase(dto);
-    } else if (dto.text == `2*${/^[A-Za-z]+$/}`) {
+    } else if (dto.text == '2*'+ '[a-zA-Z]+') {
       return 'CON we are good';
     } else {
       return ' END Invalid input';
