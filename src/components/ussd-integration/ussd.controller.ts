@@ -18,6 +18,9 @@ class UssdController {
     else if (dto.text.includes('1*')){
         return ' CON Sasa, unaitwa nani?/ Hi, what\'s your name';
     }
+    else if (dto.text.includes('1*'+/^[A-Za-z]+$/)){
+        return 'CON we are getting there'
+    }
     else if (dto.text == '2') {
       return this.ussdService.recordRapeCase(dto);
     } else if (dto.text == '2*'+ '[a-zA-Z]+') {
