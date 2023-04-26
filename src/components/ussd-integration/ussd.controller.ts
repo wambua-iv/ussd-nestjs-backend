@@ -12,10 +12,9 @@ class UssdController {
     console.log(dto);
     if (dto.text == '') {
         return ' CON Would you Like to report an Incident \n 1.FGM \n 2.Rape';
-    } else if (dto.text == 'FGM' || '1' || 'fgm' || 'Fgm') {
+    } else if (dto.text ==  '1') {
       return 'CON FGM landing'
-    } else if (dto.text == 'Rape' || '2' || 'rape') {
-
+    } else if (dto.text == '2') {
       return this.ussdService.recordRapeCase(dto)
     } else {
       return ' END Invalid input';
