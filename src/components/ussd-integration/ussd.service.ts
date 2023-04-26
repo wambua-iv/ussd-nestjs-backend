@@ -19,7 +19,7 @@ export class UssdService {
             reportToPolice: 'no'
         }
     })
-
+    console.log(victim)
     return `CON Hello ${victim}`
    }
 }
