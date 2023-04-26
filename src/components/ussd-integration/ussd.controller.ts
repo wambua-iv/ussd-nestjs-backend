@@ -15,8 +15,8 @@ class UssdController {
     } else if (dto.text == 'FGM' || '1' || 'fgm' || 'Fgm') {
       return 'CON FGM landing'
     } else if (dto.text == 'Rape' || '2' || 'rape') {
-        
-      return 'CON Rape landing'
+
+      return this.ussdService.recordRapeCase(dto)
     } else {
       return ' END Invalid input';
     }

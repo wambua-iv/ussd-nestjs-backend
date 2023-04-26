@@ -7,11 +7,18 @@ import { UssdBody } from './ussd.dto';
 export class UssdService {
   constructor(private database: DatabaseService) {}
 
- recordIncident(dto: any) {
+ recordIncident(dto: UssdBody) {
     console.log(dto);
    }
 
-   recordRapeCase(dto: UssdBody) {
-    this.database.
+   async recordRapeCase(dto: UssdBody) {
+   const victim = await this.database.Victim.create({
+        data : {
+            sessionId: dto.sessionId,
+            phoneNumber: dto.phoneNumber,
+        }
+    })
+
+    return `CON Hello ${victim}`
    }
 }
