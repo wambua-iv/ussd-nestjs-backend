@@ -11,7 +11,7 @@ export class UssdController {
   getReqBody(@Body() dto: UssdBody) {
     console.log(dto);
     if (dto.text == '1') {
-      return this.ussdService.recordIncident();
+      return this.ussdService.recordIncident(dto);
     } else if (dto.text == '1*1') {
       return 'CON its is good to be home';
     } else {
