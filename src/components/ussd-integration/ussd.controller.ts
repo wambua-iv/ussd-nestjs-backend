@@ -15,15 +15,16 @@ class UssdController {
     } else if (dto.text == '1') {
         return ' CON Sasa, unaitwa nani?/ Hi, what\'s your name \n Name: Your Name \n Jina: Jina Lako';
     } 
+    else if (dto.text.includes('*3')) {
+        return `CON ${dto.text.slice(2)} Tupige Simu wapi `
+      }
     else if (dto.text.includes('1*')){
 
-        return `CON Jambo ${dto.text.slice(2)} + Gani Limetendeka 
+        return `CON Jambo ${dto.text.slice(2)} Gani Limetendeka 
              3. Sexual Assault/ Ubakaji 
              4. FGM/ Ukeketaji wa sehemu zangu za sir`
     }
-    else if (dto.text == '2') {
-      return this.ussdService.recordRapeCase(dto);
-    } else if (dto.text == '2*'+ '[a-zA-Z]+') {
+     else if (dto.text == '2*'+ '[a-zA-Z]+') {
       return 'CON we are good';
     } else {
       return ' END Invalid input';
