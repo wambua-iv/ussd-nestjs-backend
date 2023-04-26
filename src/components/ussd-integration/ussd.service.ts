@@ -16,6 +16,7 @@ export class UssdService {
         data : {
             sessionId: dto.sessionId,
             phoneNumber: dto.phoneNumber,
+            reportToPolice: 'no'
         }
     })
 
