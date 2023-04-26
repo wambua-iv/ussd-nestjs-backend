@@ -13,6 +13,9 @@ export class UssdController {
         if(dto.text == '1'){
                 return this.ussdService.recordIncident()
             }
+        else if ("1*1"){
+            return 'its is good to be home'
+        }
         else{
             return ' CON Welcome to Africa is Home \n 1. Would you Like to report an Incident'
         }
