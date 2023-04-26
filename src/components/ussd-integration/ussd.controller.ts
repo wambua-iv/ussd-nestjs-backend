@@ -12,9 +12,13 @@ class UssdController {
     console.log(dto);
     if (dto.text == '') {
         return 'CON Who are reporting for?/ Unaripoti kwa niaba ya nani? \n 1. Self/ Wewe mwenyewe \n 2. Someone else/ Mtu mwengine'
-    } else if (dto.text == '1*' + '[a-zA-Z]+') {
+    } else if (dto.text == '1') {
         return ' CON Sasa, unaitwa nani?/ Hi, what\'s your name';
-    } else if (dto.text == '2') {
+    } 
+    else if (dto.text == '1*' + '[a-zA-Z]+'){
+        return ' CON Sasa, unaitwa nani?/ Hi, what\'s your name';
+    }
+    else if (dto.text == '2') {
       return this.ussdService.recordRapeCase(dto);
     } else if (dto.text == '2*'+ '[a-zA-Z]+') {
       return 'CON we are good';
