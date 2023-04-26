@@ -4,16 +4,16 @@ import { Request } from 'express';
 import { UssdBody } from './ussd.dto';
 
 @Controller('ussd')
-export class UssdController {
+class UssdController {
   constructor(private ussdService: UssdService) {}
 
   @Post('post')
   getReqBody(@Body() dto: UssdBody) {
     console.log(dto);
     if (dto.text == '1') {
-      return this.ussdService.recordIncident(dto);
+      return true; //this.ussdService.recordIncident(dto);
     } else if (dto.text == '1*1') {
-      return this.ussdService.recordIncident(dto);
+      return true; //this.ussdService.recordIncident(dto);
     } else {
       return ' CON Welcome to Africa is Home \n 1. Would you Like to report an Incident';
     }
@@ -23,3 +23,4 @@ export class UssdController {
     console.log(req);
   }
 }
+export default UssdController;
