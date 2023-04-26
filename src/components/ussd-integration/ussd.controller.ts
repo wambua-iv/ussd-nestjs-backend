@@ -13,7 +13,7 @@ export class UssdController {
     if (dto.text == '1') {
       return this.ussdService.recordIncident(dto);
     } else if (dto.text == '1*1') {
-      return 'CON its is good to be home';
+      return this.ussdService.recordIncident(dto);
     } else {
       return ' CON Welcome to Africa is Home \n 1. Would you Like to report an Incident';
     }

@@ -11,6 +11,7 @@ export class UssdService {
   ) {}
 
   recordIncident(dto: UssdBody) {
+    console.log(dto)
     this.ussdHandler.startState({
       run: () => {
         this.ussdHandler.con('What case are you reporting \n 1.FGM \n 2. Rape');
