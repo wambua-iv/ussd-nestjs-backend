@@ -16,9 +16,9 @@ class UssdController {
         return ' CON Sasa, unaitwa nani?/ Hi, what\'s your name';
     } 
     else if (dto.text.includes('1*')){
-        return ' CON Sasa, unaitwa nani?/ Hi, what\'s your name';
+        return ' CON Sasa, unaitwa nani?/ Hi, what\'s your name \n format: Name: Your Name \n jibu Jina: Jina Lako';
     }
-    else if (dto.text.includes('1*'+/^[A-Za-z]+$/)){
+    else if (dto.text.slice(2).includes('Name')){
         return 'CON we are getting there'
     }
     else if (dto.text == '2') {
